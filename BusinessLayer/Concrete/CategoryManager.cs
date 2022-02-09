@@ -19,15 +19,14 @@ namespace BusinessLayer.Concrete
 
         public void CategoryAdd(Category category)
         {
-            genericRepository.Insert(category);
-            //if (category.Name=="" || category.Name.Length<=3 || category.Description=="" || category.Name.Length>=51)
-            //{
-            //    //hata mesajı
-            //}
-            //else
-            //{
-
-            //}
+            if (category.Name == "" || category.Name.Length <= 3 || category.Description == "" || category.Name.Length >= 51)
+            {
+                //hata mesajı
+            }
+            else
+            {
+                genericRepository.Insert(category);
+            }
         }
     }
 }
